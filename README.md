@@ -1,8 +1,30 @@
-# React + Vite
+# This Application is a Telegram Clone with Reactjs, tailwindcss and material ui
+# Steps to run this application locally
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone the repository in local machine by following command
+    ```
+    git clone https://github.com/Vamsi-Praveen/BeyondChat
+    ```
+2. Install the dependency modules using following command
+    ```
+    npm install
+    ```
+3. After installing run the application by
+    ```
+    npm run dev
+    ```
+4. Open browser and navigate to
+    ```
+    http://localhost:5173
+    ```
 
-Currently, two official plugins are available:
+# Tech Stack Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. ReactJs
+2. TailwindCSS
+3. Material UI
+
+
+# Live url
+
+[LINK](https://beyond-chat-xi.vercel.app)
