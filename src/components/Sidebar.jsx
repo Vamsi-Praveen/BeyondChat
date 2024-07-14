@@ -46,11 +46,11 @@ const Sidebar = ({ selectedContact, contact, setShow }) => {
         );
     }
     return (
-        <div className='md:w-[30%] w-full h-screen bg-white md:border-slate-200 md:border-r flex flex-col'>
-            <div className='md:bg-transparent bg-blue-400 shadow-md md:shadow-none py-1 text-white md:text-black'>
+        <div className='md:w-[30%] w-full h-screen bg-white dark:bg-[#2f2f2f] md:border-slate-200 md:border-r flex flex-col dark:border-white/70'>
+            <div className='md:bg-transparent bg-blue-400 dark:bg-slate-700/80 shadow-md md:shadow-none py-1 text-white md:dark:text-white'>
                 <div className='flex flex-col'>
                     <div className='m-2 flex items-center gap-4 '>
-                        <div onClick={() => setIsSideOpen(!isSideOpen)} className='cursor-pointer'>
+                        <div onClick={() => setIsSideOpen(!isSideOpen)} className='cursor-pointer text-black dark:text-white'>
                             <MenuIcon />
                         </div>
                         <div className='flex-1 bg-slate-200/70 h-10 rounded-[4px] md:flex justify-center hidden '>
@@ -88,17 +88,17 @@ const Sidebar = ({ selectedContact, contact, setShow }) => {
                     }
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    <div className='h-[50vh] w-full flex items-center justify-center'>
+                    <div className='h-[50vh] w-full flex items-center justify-center dark:text-white'>
                         <h1>No Regular Messages</h1>
                     </div>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
-                    <div className='h-[50vh] w-full flex items-center justify-center'>
+                    <div className='h-[50vh] w-full flex items-center justify-center dark:text-white'>
                         <h1>No Unread Messages</h1>
                     </div>
                 </CustomTabPanel>
             </div>
-            <div className={`md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-8 z-[8]`}>
+            <div className={`md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-8 z-[8] dark:text-white`}>
                 <CreateIcon />
             </div>
         </div>

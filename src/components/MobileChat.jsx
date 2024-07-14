@@ -49,14 +49,14 @@ const MobileChat = ({ setShow, show, contact }) => {
     }, [messages]);
     return (
         <div className={`absolute z-20 inset-0 h-[100dvh] w-full md:hidden bg-white ${!show && 'hidden'}`}>
-            <div className='px-2 py-3 flex gap-4 border-b border-slate-200 items-center'>
+            <div className='px-2 py-3 flex gap-4 border-b border-slate-200 dark:bg-[#3d3b3b] dark:border-white/70 dark:text-white items-center'>
                 <div onClick={handleShow}>
                     <ArrowBackIcon />
                 </div>
                 <div className='flex-1 flex items-center justify-between'>
                     <div>
                         <Typography variant='subtitle'>{contact?.creator?.name}</Typography>
-                        <Typography variant='body2' sx={{ color: 'blue' }}>online</Typography>
+                        <p className='text-blue-600 dark:text-white text-sm'>online</p>
                     </div>
                     <MoreVertIcon />
                 </div>
@@ -69,13 +69,13 @@ const MobileChat = ({ setShow, show, contact }) => {
                 }
                   {
                     showScrollDown && <div className='flex items-center justify-center'>
-                        <div className="p-2 bg-white text-black rounded-full cursor-pointer fixed z-10 bottom-20 border border-slate-400" onClick={handleScrollDown}>
+                        <div className="p-2 bg-white dark:text-white dark:bg-slate-800 text-black rounded-full cursor-pointer fixed z-10 bottom-20 border border-slate-400" onClick={handleScrollDown}>
                             <ArrowDownwardIcon />
                         </div>
                     </div>
                 }
             </div>
-            <div className='bg-white border-t border-slate-100 h-[50px] flex items-center'>
+            <div className='bg-white dark:bg-[#2f2f2f] border-t border-slate-100 dark:border-white/50 h-[50px] flex items-center dark:text-white'>
                 <div className='flex  flex-1 items-center gap-4 mx-2'>
                     <AttachFileIcon />
                     <div className='flex flex-1'>

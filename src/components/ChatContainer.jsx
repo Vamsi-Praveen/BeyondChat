@@ -50,10 +50,10 @@ const ChatContainer = ({ contact }) => {
 
     return (
         contact ? <div className='w-[70%] hidden md:flex flex-col  '>
-            <div className='flex items-center justify-between py-2.5 px-4 border-b border-slate-100'>
+            <div className='flex items-center justify-between py-2.5 px-4 border-b border-slate-100 dark:bg-[#3d3b3b]  dark:text-white dark:border-white/70'>
                 <div>
                     <Typography variant='subtitle'>{contact?.creator?.name}</Typography>
-                    <Typography variant='body2' sx={{ color: 'blue' }}>online</Typography>
+                    <p className='text-blue-600 dark:text-white text-sm'>online</p>
                 </div>
                 <div className='flex gap-2'>
                     <SearchIcon />
@@ -68,14 +68,14 @@ const ChatContainer = ({ contact }) => {
                 }
                 {
                     showScrollDown && <div className='flex items-center justify-center'>
-                        <div className="p-2 bg-white text-black rounded-full cursor-pointer fixed z-[8] bottom-20 border border-slate-400" onClick={handleScrollDown}>
+                        <div className="p-2 bg-white dark:bg-[#2f2f2f] dark:text-white text-black rounded-full cursor-pointer fixed z-[8] bottom-20 border border-slate-400" onClick={handleScrollDown}>
                             <ArrowDownwardIcon />
                         </div>
                     </div>
                 }
 
             </div>
-            <div className='bg-white border-t border-slate-100 h-[50px] flex items-center'>
+            <div className='bg-white dark:bg-[#2f2f2f] border-t border-slate-100 dark:border-white/50 h-[50px] flex items-center dark:text-white'>
                 <div className='flex  flex-1 items-center gap-4 mx-4'>
                     <AttachFileIcon />
                     <div className='flex flex-1'>

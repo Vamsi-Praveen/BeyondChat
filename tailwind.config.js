@@ -4,10 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage:{
-        "bgImg":"url('/bg.png')"
+      backgroundImage: {
+        "bgImg": "url('/bg.png')"
       }
     },
   },
