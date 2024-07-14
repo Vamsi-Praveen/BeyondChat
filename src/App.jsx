@@ -6,7 +6,7 @@ const App = () => {
   const [selectedContact, setSelectedContact] = useState(null)
   return (
     <div className='flex h-screen w-screen'>
-      <Sidebar selectedContact={setSelectedContact} />
+      <Sidebar selectedContact={setSelectedContact} contact={selectedContact}/>
       <ChatContainer contact={selectedContact} />
     </div>
   )

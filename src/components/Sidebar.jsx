@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import Side from './Side';
 
-const Sidebar = ({ selectedContact }) => {
+const Sidebar = ({ selectedContact,contact }) => {
     const [contacts, setContacts] = useState([])
     useEffect(() => {
         const fetchContacts = async () => {
@@ -17,11 +17,11 @@ const Sidebar = ({ selectedContact }) => {
     }, [])
     const handleContactClick = useCallback((contact) => {
         selectedContact(contact);
-      }, [selectedContact]);
+    }, [selectedContact]);
 
     const [isSideOpen, setIsSideOpen] = useState(false)
     return (
-        <div className='md:w-[30%] w-full h-screen bg-white md:border-slate-100 md:border-r flex flex-col'>
+        <div className='md:w-[30%] w-full h-screen bg-white md:border-slate-200 md:border-r flex flex-col'>
             <div className='md:bg-transparent bg-blue-400 shadow-md md:shadow-none py-1 text-white md:text-black'>
                 <div className='m-2 flex items-center gap-4'>
                     <div onClick={() => setIsSideOpen(!isSideOpen)}>
@@ -45,8 +45,12 @@ const Sidebar = ({ selectedContact }) => {
             </div>
             <div className='md:mt-1 flex-1 overflow-y-scroll'>
                 {
+                    contact ?
+                    <div>
+                        <h1>vamsi</h1>
+                    </div> :
                     contacts.filter((el) => el.creator?.name != null).map((el, i) => {
-                        return <div className='flex flex-col' key={i} onClick={() => handleContactClick(el.creator)}>
+                        return <div className='flex flex-col' key={i} onClick={() => handleContactClick(el)}>
                             <ChatContact data={el.creator} />
                         </div>
                     })
