@@ -48,7 +48,7 @@ const MobileChat = ({ setShow, show, contact }) => {
         }
     }, [messages]);
     return (
-        <div className={`absolute z-20 inset-0 h-screen w-full md:hidden bg-white ${!show && 'hidden'}`}>
+        <div className={`absolute z-20 inset-0 h-[100lvh] w-full md:hidden bg-white ${!show && 'hidden'}`}>
             <div className='px-2 py-3 flex gap-4 border-b border-slate-200 items-center'>
                 <div onClick={handleShow}>
                     <ArrowBackIcon />
@@ -79,7 +79,7 @@ const MobileChat = ({ setShow, show, contact }) => {
                 <div className='flex  flex-1 items-center gap-4 mx-2'>
                     <AttachFileIcon />
                     <div className='flex flex-1'>
-                        <input type="text" placeholder='Write a message...' className='border-none outline-none focus:ring-0 flex-1' />
+                        <input type="text" placeholder='Write a message...' className='border-none outline-none focus:ring-0 flex-1 bg-transparent' />
                         <div className='flex gap-2'>
                             <TagFacesIcon />
                             <MicIcon />

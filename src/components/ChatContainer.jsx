@@ -79,7 +79,7 @@ const ChatContainer = ({ contact }) => {
                 <div className='flex  flex-1 items-center gap-4 mx-4'>
                     <AttachFileIcon />
                     <div className='flex flex-1'>
-                        <input type="text" placeholder='Write a message...' className='border-none outline-none focus:ring-0 flex-1' />
+                        <input type="text" placeholder='Write a message...' className='border-none outline-none focus:ring-0 flex-1 bg-transparent' />
                         <div className='space-x-2'>
                             <TagFacesIcon />
                             <MicIcon />
