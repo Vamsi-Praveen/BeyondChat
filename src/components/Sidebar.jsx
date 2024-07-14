@@ -47,7 +47,7 @@ const Sidebar = ({ selectedContact, contact, setShow }) => {
     }
     return (
         <div className='md:w-[30%] w-full h-screen bg-white dark:bg-[#2f2f2f] md:border-slate-200 md:border-r flex flex-col dark:border-white/70'>
-            <div className='md:bg-transparent bg-blue-400 dark:bg-slate-700/80 shadow-md md:shadow-none py-1 text-white md:dark:text-white'>
+            <div className='md:bg-transparent bg-blue-400 dark:bg-[#2f2f2f] shadow-md md:shadow-none py-1 text-white md:dark:text-white'>
                 <div className='flex flex-col'>
                     <div className='m-2 flex items-center gap-4 '>
                         <div onClick={() => setIsSideOpen(!isSideOpen)} className='cursor-pointer text-black dark:text-white'>
