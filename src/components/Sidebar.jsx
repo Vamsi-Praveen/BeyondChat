@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChatContact from './ChatContact';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
+import Side from './Side';
 
-const Sidebar = () => {
+const Sidebar = ({ selectedContact }) => {
     const [contacts, setContacts] = useState([])
     useEffect(() => {
         const fetchContacts = async () => {
@@ -14,11 +15,18 @@ const Sidebar = () => {
         }
         fetchContacts()
     }, [])
+    const handleContactClick = useCallback((contact) => {
+        selectedContact(contact);
+      }, [selectedContact]);
+
+    const [isSideOpen, setIsSideOpen] = useState(false)
     return (
         <div className='md:w-[30%] w-full h-screen bg-white md:border-slate-100 md:border-r flex flex-col'>
             <div className='md:bg-transparent bg-blue-400 shadow-md md:shadow-none py-1 text-white md:text-black'>
                 <div className='m-2 flex items-center gap-4'>
-                    <MenuIcon />
+                    <div onClick={() => setIsSideOpen(!isSideOpen)}>
+                        <MenuIcon />
+                    </div>
                     <div className='flex-1 bg-slate-200/70 h-10 rounded-[4px] md:flex justify-center hidden '>
                         <input
                             type='text'
@@ -30,13 +38,16 @@ const Sidebar = () => {
                         <h1 className='font-medium text-lg'>Telegram</h1>
                         <SearchIcon />
                     </div>
+                    {
+                        isSideOpen && <Side toggle={setIsSideOpen} />
+                    }
                 </div>
             </div>
             <div className='md:mt-1 flex-1 overflow-y-scroll'>
                 {
                     contacts.filter((el) => el.creator?.name != null).map((el, i) => {
-                        return <div className='flex flex-col' key={i}>
-                            <ChatContact data={el?.creator} />
+                        return <div className='flex flex-col' key={i} onClick={() => handleContactClick(el.creator)}>
+                            <ChatContact data={el.creator} />
                         </div>
                     })
                 }

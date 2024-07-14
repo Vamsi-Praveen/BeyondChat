@@ -1,15 +1,12 @@
 import { Avatar, Typography } from '@mui/material'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 const ChatContact = ({ data }) => {
-    const avatarName = data?.name
-        ?.split(' ')
-        .map((word) => word[0])
-        .join('');
+    const avatarName = useMemo(() => data?.name?.split(' ').map((word) => word[0]).join(''), [data?.name]);
         const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50'];
-        const bgColor = colors[Math.floor(Math.random() * colors.length)];
+        const bgColor = useMemo(() => colors[Math.floor(Math.random() * colors.length)], [data]);
     return (
-        <div className='w-full hover:bg-blue-400 hover:text-white text-black flex h-[65px] p-2 items-center cursor-pointer transition md:mb-2 mb-4 '>
+        <div className='w-full md:hover:bg-blue-400 md:hover:text-white text-black flex h-[65px] p-2 items-center cursor-pointer transition md:mb-2 mb-4 '>
             <Avatar sx={{ width: 40, height: 40 ,bgcolor:bgColor}}>{avatarName}</Avatar>
             <div className='w-[80%] flex justify-between items-center border-b md:border-0 border-slate-100 hover:border-0 pb-1 '>
                 <div>

@@ -6,12 +6,12 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import MicIcon from '@mui/icons-material/Mic';
 
-const ChatContainer = () => {
+const ChatContainer = ({ contact }) => {
     return (
         <div className='w-[70%] hidden md:flex flex-col  '>
             <div className='flex items-center justify-between py-2.5 px-4 border-b border-slate-100'>
                 <div>
-                    <Typography variant='subtitle'>Eva Summer</Typography>
+                    <Typography variant='subtitle'>{contact?.name}</Typography>
                     <Typography variant='body2' sx={{ color: 'blue' }}>online</Typography>
                 </div>
                 <div className='flex gap-2'>
