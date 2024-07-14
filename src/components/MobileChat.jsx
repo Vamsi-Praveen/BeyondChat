@@ -48,7 +48,7 @@ const MobileChat = ({ setShow, show, contact }) => {
         }
     }, [messages]);
     return (
-        <div className={`absolute z-20 inset-0 h-[100lvh] w-full md:hidden bg-white ${!show && 'hidden'}`}>
+        <div className={`absolute z-20 inset-0 h-[100dvh] w-full md:hidden bg-white ${!show && 'hidden'}`}>
             <div className='px-2 py-3 flex gap-4 border-b border-slate-200 items-center'>
                 <div onClick={handleShow}>
                     <ArrowBackIcon />

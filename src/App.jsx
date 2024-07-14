@@ -7,7 +7,7 @@ const App = () => {
   const [selectedContact, setSelectedContact] = useState(null)
   const [show, setShow] = useState(false)
   return (
-    <div className='flex h-screen w-screen relative'>
+    <div className='flex h-[100dvh] w-screen relative'>
       <Sidebar selectedContact={setSelectedContact} setShow={setShow}  />
       <ChatContainer contact={selectedContact} />
       <div>
