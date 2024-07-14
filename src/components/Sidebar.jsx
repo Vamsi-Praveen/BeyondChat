@@ -9,7 +9,7 @@ import Tab from '@mui/material/Tab';
 import CreateIcon from '@mui/icons-material/Create';
 
 
-const Sidebar = ({ selectedContact, contact }) => {
+const Sidebar = ({ selectedContact, contact,setShow }) => {
     const [contacts, setContacts] = useState([])
     useEffect(() => {
         const fetchContacts = async () => {
@@ -19,8 +19,10 @@ const Sidebar = ({ selectedContact, contact }) => {
         }
         fetchContacts()
     }, [])
+    const [showScrollDown, setShowScrollDown] = useState(false);
     const handleContactClick = useCallback((contact) => {
         selectedContact(contact);
+        setShow(true)
     }, [selectedContact]);
 
     const [isSideOpen, setIsSideOpen] = useState(false)
@@ -75,37 +77,7 @@ const Sidebar = ({ selectedContact, contact }) => {
                     </div>
                 </div>
             </div>
-            <div className='md:mt-1 md:hidden flex-1 overflow-y-scroll'>
-                {
-                    contact ?
-                        <div>
-                            <h1>vamsi</h1>
-                        </div> :
-                        <>
-                            <CustomTabPanel value={value} index={0}>
-                                {
-                                    contacts.filter((el) => el.creator?.name != null).map((el, i) => {
-                                        return <div className='flex flex-col' key={i} onClick={() => handleContactClick(el)}>
-                                            <ChatContact data={el.creator} />
-                                        </div>
-                                    })
-                                }
-                            </CustomTabPanel>
-                            <CustomTabPanel value={value} index={1}>
-                                <div className='h-[50vh] w-full flex items-center justify-center'>
-                                    <h1>No Regular Messages</h1>
-                                </div>
-                            </CustomTabPanel>
-                            <CustomTabPanel value={value} index={2}>
-                                <div className='h-[50vh] w-full flex items-center justify-center'>
-                                    <h1>No Unread Messages</h1>
-                                </div>
-                            </CustomTabPanel>
-
-                        </>
-                }
-            </div>
-            <div className='md:mt-1 flex-1 overflow-y-scroll hidden md:block'>
+            <div className='md:mt-1 flex-1 overflow-y-scroll'>
                 <CustomTabPanel value={value} index={0}>
                     {
                         contacts.filter((el) => el.creator?.name != null).map((el, i) => {
@@ -126,7 +98,7 @@ const Sidebar = ({ selectedContact, contact }) => {
                     </div>
                 </CustomTabPanel>
             </div>
-            <div className='md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-14 z-10'>
+            <div className='md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-8 z-10'>
                 <CreateIcon/>
             </div>
         </div>
