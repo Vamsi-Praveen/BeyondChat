@@ -69,10 +69,10 @@ const Sidebar = ({ selectedContact, contact, setShow }) => {
                         isSideOpen && <Side toggle={setIsSideOpen} />
                     }
                     <div className='md:hidden text-white'>
-                        <Tabs value={value} onChange={handleChange}>
-                            <Tab label="All" sx={{ color: "white" }} />
-                            <Tab label="Regulars" sx={{ color: "white" }} />
-                            <Tab label="Unread" sx={{ color: "white" }} />
+                        <Tabs value={value} onChange={handleChange} sx={{ width: '100%' }}>
+                            <Tab label="All" sx={{ color: "white", flexGrow: 1 }} />
+                            <Tab label="Regulars" sx={{ color: "white", flexGrow: 1 }} />
+                            <Tab label="Unread" sx={{ color: "white", flexGrow: 1 }} />
                         </Tabs>
                     </div>
                 </div>
