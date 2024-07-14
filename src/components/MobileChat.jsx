@@ -16,7 +16,7 @@ const MobileChat = ({ setShow, show, contact }) => {
     const containerRef = useRef(null)
     useEffect(() => {
         const fetchMessages = async () => {
-            await axios.get(`https://devapi.beyondchats.com/api/get_chat_messages?chat_id=3888`).then((data) => {
+            await axios.get(`https://devapi.beyondchats.com/api/get_chat_messages?chat_id=${contact?.id}`).then((data) => {
                 setMessages(data?.data?.data)
             })
         }
