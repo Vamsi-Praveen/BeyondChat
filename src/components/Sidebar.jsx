@@ -9,7 +9,7 @@ import Tab from '@mui/material/Tab';
 import CreateIcon from '@mui/icons-material/Create';
 
 
-const Sidebar = ({ selectedContact, contact,setShow }) => {
+const Sidebar = ({ selectedContact, contact, setShow }) => {
     const [contacts, setContacts] = useState([])
     useEffect(() => {
         const fetchContacts = async () => {
@@ -50,7 +50,7 @@ const Sidebar = ({ selectedContact, contact,setShow }) => {
             <div className='md:bg-transparent bg-blue-400 shadow-md md:shadow-none py-1 text-white md:text-black'>
                 <div className='flex flex-col'>
                     <div className='m-2 flex items-center gap-4 '>
-                        <div onClick={() => setIsSideOpen(!isSideOpen)}>
+                        <div onClick={() => setIsSideOpen(!isSideOpen)} className='cursor-pointer'>
                             <MenuIcon />
                         </div>
                         <div className='flex-1 bg-slate-200/70 h-10 rounded-[4px] md:flex justify-center hidden '>
@@ -98,8 +98,8 @@ const Sidebar = ({ selectedContact, contact,setShow }) => {
                     </div>
                 </CustomTabPanel>
             </div>
-            <div className='md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-8 z-10'>
-                <CreateIcon/>
+            <div className={`md:hidden h-12 w-12 bg-blue-400 text-black rounded-full flex items-center justify-center fixed right-8 bottom-8 z-[8]`}>
+                <CreateIcon />
             </div>
         </div>
     );

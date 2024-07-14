@@ -68,7 +68,7 @@ const ChatContainer = ({ contact }) => {
                 }
                 {
                     showScrollDown && <div className='flex items-center justify-center'>
-                        <div className="p-2 bg-white text-black rounded-full cursor-pointer fixed z-10 bottom-20 border border-slate-400" onClick={handleScrollDown}>
+                        <div className="p-2 bg-white text-black rounded-full cursor-pointer fixed z-[8] bottom-20 border border-slate-400" onClick={handleScrollDown}>
                             <ArrowDownwardIcon />
                         </div>
                     </div>
